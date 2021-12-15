@@ -1,0 +1,70 @@
+{
+  "streams":[
+    {
+      "stream": {
+        "name":"exchange_rates",
+        "json_schema":{
+          "type":"object",
+          "properties":{
+            "result":{
+              "type":[
+                "string"
+              ]
+            },
+            "documentation":{
+              "type":[
+                "string"
+              ]
+            },
+            "terms_of_use":{
+              "type":[
+                "string"
+              ]
+            },
+            "year":{
+              "type":[
+                "integer"
+              ]
+            },
+            "month":{
+              "type":[
+                "integer"
+              ]
+            },
+            "day":{
+              "type":[
+                "integer"
+              ]
+            },
+            "conversion_rates":{
+              "type":[
+                "object"
+              ]
+            },
+            "exchange_rate_date":{
+              "type":[
+                "string"
+              ]
+            }
+          }
+        },
+        "supported_sync_modes":[
+          "full_refresh",
+          "incremental"
+        ],
+        "source_defined_cursor": true,
+        "default_cursor_field":[
+          "exchange_rate_date"
+        ],
+        "source_defined_primary_key":[
+          [
+            "exchange_rate_date"
+          ]
+        ]
+      },
+      "sync_mode": "incremental",
+      "destination_sync_mode": "overwrite",
+      "cursor_field": ["exchange_rate_date"]
+    }
+  ]
+}
